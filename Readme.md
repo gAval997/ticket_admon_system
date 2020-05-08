@@ -6,6 +6,12 @@ This is the back end for a ticket administration module written in Django.
 * python3-dev
 * python3-pip
 
+#### To do:
+- [X] Register models in django admin.
+- [X] API endpoint.
+- [ ] Add ticket solution evidence to models.
+- [ ] Use JWT for Front End operations.
+
 #### How to run this backend code:
 First of all, I suggest you create a virtual environment (I use pipenv a lot):<br>
 1. Go to this project folder on your terminal, then execute.<br>
