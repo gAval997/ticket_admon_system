@@ -9,8 +9,9 @@ This is the back end for a ticket administration module written in Django.
 #### To do:
 - [X] Register models in django admin.
 - [X] API endpoint.
-- [ ] Add ticket solution evidence to models.
-- [ ] Use JWT for Front End operations.
+- [X] Add ticket solution evidence to models.
+- [X] Use JWT for Front End operations.
+- [ ] Convert ticket evidence image to Base64 in get method.
 
 #### How to run this backend code:
 First of all, I suggest you create a virtual environment (I use pipenv a lot):<br>

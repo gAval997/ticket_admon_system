@@ -51,3 +51,23 @@ class ListTicketSerializer(serializers.HyperlinkedModelSerializer):
             'released_user',
             'reporting_user',
         )
+
+
+class TicketEvidenceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TicketSolutionEvidence
+        fields = '__all__'
+
+
+class TicketEvidenceListSerializer(serializers.HyperlinkedModelSerializer):
+    uploader = SafeUserSerializer(required=True)
+    ticket = TicketSerializer(required=True)
+
+    class Meta:
+        model = TicketSolutionEvidence
+        fields = (
+            'file_data',
+            'file_name',
+            'ticket',
+            'uploader',
+        )

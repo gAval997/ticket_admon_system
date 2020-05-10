@@ -68,5 +68,27 @@ class TicketListViewSet(viewsets.ModelViewSet):
     if not DEVELOPMENT:
         permission_classes = (IsAuthenticated,)
 
-    queryset = Ticket.objects.all()
+    queryset = TicketSolutionEvidence.objects.all()
     serializer_class = ListTicketSerializer
+
+
+class TicketEvidenceViewSet(viewsets.ModelViewSet):
+    """
+        API endpoint that allows tickets evidences to be viewed or edited.
+        """
+    if not DEVELOPMENT:
+        permission_classes = (IsAuthenticated,)
+
+    queryset = TicketSolutionEvidence.objects.all()
+    serializer_class = TicketEvidenceSerializer
+
+
+class TicketEvidenceListViewSet(viewsets.ModelViewSet):
+    """
+        API endpoint that allows tickets evidences to be viewed or edited.
+        """
+    if not DEVELOPMENT:
+        permission_classes = (IsAuthenticated,)
+
+    queryset = TicketSolutionEvidence.objects.all()
+    serializer_class = TicketEvidenceListSerializer
