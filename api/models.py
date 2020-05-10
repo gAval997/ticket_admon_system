@@ -19,23 +19,29 @@ class Ticket(models.Model):
         null=True,
     )
     ticket_uid = models.CharField(max_length=16)
-    status_id = models.ForeignKey(
+    status = models.ForeignKey(
         TicketStatus,
         on_delete=models.DO_NOTHING,
         related_name='ticket_status',
     )
     title = models.CharField(max_length=500)
     ticket_description = models.CharField(max_length=500)
-    solution = models.CharField(max_length=500)
-    released_user_id = models.ForeignKey(
-        User,
-        on_delete=models.DO_NOTHING,
-        related_name='ticket_released_by',
+    solution = models.CharField(
+        max_length=500,
+        null=True,
+        blank=True,
     )
-    reporting_user_id = models.ForeignKey(
+    released_user = models.ForeignKey(
         User,
         on_delete=models.DO_NOTHING,
-        related_name='ticket_reporting_iser'
+        related_name='ticket_released_user',
+        null=True,
+        blank=True,
+    )
+    reporting_user = models.ForeignKey(
+        User,
+        on_delete=models.DO_NOTHING,
+        related_name='ticket_reporting_user'
     )
 
     class Meta:

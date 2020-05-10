@@ -24,8 +24,9 @@ SECRET_KEY = 'yy&u4&%5xu_c!g*(*%l#pe#gum1de7ge++tbq_3434-dgo)ry#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+DEVELOPMENT = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,8 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'api',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
